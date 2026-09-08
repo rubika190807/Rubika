@@ -1,0 +1,53 @@
+1.
+basic_salary = int(input())
+allowance = int(input())
+bonus = int(input())
+total_salary = basic_salary + allowance + bonus
+print(total_salary)
+
+
+2.
+price = int(input())
+quantity = int(input())
+discount = int(input())
+total_cost = price * quantity
+final_amount = total_cost - discount
+print(final_amount)
+
+
+3.
+number = int(input())
+hundreds = number // 100
+tens = (number // 10) % 10
+units = number % 10
+digit_sum = hundreds + tens + units
+print(hundreds)
+print(tens)
+print(units)
+print(digit_sum)
+
+
+4.
+data_usage = int(input())
+gigabytes = data_usage // 1024
+remaining_megabytes = data_usage % 1024
+print(gigabytes)
+print(remaining_megabytes)
+
+
+5.
+total_bytes = int(input())
+kilobytes = total_bytes // 1024
+remaining_bytes = total_bytes % 1024
+print(f"Size: {kilobytes} KB Remaining: {remaining_bytes} bytes")
+
+6.
+passenger_name = input()
+distance = float(input())
+rate = float(input())
+waiting_fee = float(input())
+discount = float(input())
+distance_charge = distance * rate
+final_fare = distance_charge + waiting_fee - discount
+print(f"Vehicle: {passenger_name} Parking Fee: {final_fare:.2f}")
+
