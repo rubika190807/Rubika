@@ -1,0 +1,97 @@
+1.
+food_amount = float(input())
+day = input().strip()
+membership = input().strip()
+gst = 0.05 * food_amount
+amount_after_gst = food_amount + gst
+if day == "Saturday" or day == "Sunday":
+    service_charge = 0.10 * food_amount
+else:
+    service_charge = 0.05 * food_amount
+amount_after_service = amount_after_gst + service_charge
+if membership == "Gold":
+    discount = 0.08 * amount_after_service
+elif membership == "Silver":
+    discount = 0.04 * amount_after_service
+else:
+    discount = 0.0
+final_bill = amount_after_service - discount
+if final_bill > 3000:
+    cashback = 0.02 * final_bill
+else:
+    cashback = 0.0
+print(f"{final_bill:.2f}")
+print(f"{cashback:.2f}")
+
+
+
+2.
+age = int(input())
+credit_score = int(input())
+monthly_income = int(input())
+existing_emi = int(input())
+loan_amount = int(input())
+if age < 21 or age > 65:
+    print("Rejected")
+    print("Age not eligible")
+elif credit_score < 600:
+    print("Rejected")
+    print("Credit score too low")
+elif 600 <= credit_score <= 750:
+    if monthly_income >= 50000 and existing_emi < (0.30 * monthly_income):
+        print("Approved")
+        print("Interest Rate: 12%")
+    else:
+        print("Approved")
+        print("Interest Rate: 14%")
+        print("Co-applicant Required")
+elif credit_score > 750:
+    if loan_amount <= 10 * monthly_income:
+        print("Approved")
+        print("Interest Rate: 8%")
+    elif loan_amount <= 20 * monthly_income:
+        print("Approved")
+        print("Interest Rate: 10%")
+    else:
+        print("Rejected")
+        print("Loan amount exceeds eligible limit")
+
+
+
+3.
+ticket_type = input().strip()
+hours_before = int(input().strip())
+loyalty_status = input().strip()
+seat_available = input().strip()
+paid_extra = int(input().strip())
+upgrade_cost = int(input().strip())
+refund = 0
+if ticket_type == "First":
+    refund = 100
+elif ticket_type == "Business":
+    if hours_before >= 24:
+        refund = 90
+    elif hours_before >= 12:
+        refund = 50
+    else:
+        if loyalty_status == "Gold":
+            refund = 25
+        else:
+            refund = 0
+elif ticket_type == "Economy":
+    if hours_before >= 48:
+        refund = 70
+    elif hours_before >= 24:
+        refund = 30
+    else:
+        refund = 0
+if seat_available == "true" and (loyalty_status == "Gold" or paid_extra >= upgrade_cost):
+    upgrade_status = "Approved"
+else:
+    upgrade_status = "Denied"
+print(f"Refund: {refund}%")
+print(f"Upgrade: {upgrade_status}")
+
+
+
+
